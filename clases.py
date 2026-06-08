@@ -1,7 +1,14 @@
 #aca creo las clases de persona y poblacion
+
 import random
 import pandas as pd
 
+#donde agrego esto?? nose si un metodo de poblacion o que sea una funcion aparte
+'''
+crear_personas (cant_altruistas_validada , cant_egoista_validada)
+crea objetos de persona con condición
+agrega (llamando al método de Población) a la lista de población
+'''
 class Persona:
     def __innit__ (self, condicion, ID):
         '''
@@ -119,6 +126,11 @@ class Poblacion:
                 lista_emparejamientos.remove(persona)
 
     def filtrar_poblacion(self): 
+        '''
+        filtra a las personas de la lista si se mueren o si se reproducen agrega otra
+        cambia la lista del atributo de personas. 
+        '''
+        
         for persona in self.personas: 
             if persona.recursos <= 0: 
                 self.muerte(persona)
@@ -126,6 +138,19 @@ class Poblacion:
                 hijo = persona.reproduccion(persona)
                 self.agregar_personas(hijo)
                 persona.recursos -= 50
+                
+    def simulacion(self, rondas):
+        '''
+        genera simulacion
+        paramentros: 
+            rondas: int --> numero de rondas ingresado por el ususario
+        '''
+        
+        for ronda in range(rondas): 
+            self.ronda_interaccion()
+            self.filtrar_poblacion()
+    
+        
                 
             
             
