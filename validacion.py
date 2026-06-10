@@ -1,32 +1,23 @@
 #validacion.py
 
-def validar_input(cant_altruistas, cant_egoistas, cant_turnos):
+def validar_input(numero):
   '''
-  Valida que la informacion ingresada por el usuario sea del tipo de dato correcto 
-  y dentro del rango permitido. 
+  Valida que el numero ingresado por el usuario sea del tipo de dato correcto y lo convierte a entero(int).
 
   Parametros:
   -----------
-  cant_altruistas: int 
-    Cantidad de personas altruistas ingresadas por el usuario.
-  cant_egoistas: int
-    Cantidad de personas egoistas ingresadas por el usuario.
-  cant_turnos: int
-    Cantidad de turnos ingresados por el usuario para realizar la simulacion. #(no sabemos todavia las restricciones de los turnos)
+  numero: int
+    numero ingresado por el usuario.
 
   Returns:
   --------
-  # no se que retorna, una tupla?, valores por separado? 
-  cant_altruistas: int
-  cant_egoistas:int
-  cant_turnos: int
+  numero: int 
 
   Raises:
   -----
  TypeError
    Si el tipo de dato ingresado por el usuario es incorrecto.
  ValueError
-   Si algunos de los datos ingresados es cero, negativo o supera el rango permitido
-   Si cant_altruistas y cant_egoistas son cero al mismo tiempo (poblacion vacia). 
+   Si el numero ingresado es negativo.
    '''
   
