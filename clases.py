@@ -10,7 +10,7 @@ crea objetos de persona con condición
 agrega (llamando al método de Población) a la lista de población
 '''
 class Persona:
-    def __innit__ (self, condicion, ID):
+    def __init__ (self, condicion, ID):
         '''
         inicializa un objeto persona.
 
@@ -38,7 +38,7 @@ class Persona:
     
 
 class Poblacion: 
-    def __innit__ (self):
+    def __init__ (self):
         '''
         inicializa un objeto de Poblacion
 
