@@ -15,9 +15,14 @@ def validar_input(numero):
 
   Raises:
   -----
- TypeError
+  TypeError
    Si el tipo de dato ingresado por el usuario es incorrecto.
- ValueError
+  ValueError
    Si el numero ingresado es negativo.
    '''
+  if type(numero) != int:
+     raise TypeError("el dato ingresado es tipo incorrecto, debe ser un numero entero")
+  if numero <= 0:
+     raise ValueError("el numero ingresado no puede ser negativo, debe ser positivo")
   
+  return int(numero)
