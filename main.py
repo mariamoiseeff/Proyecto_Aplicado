@@ -1,4 +1,3 @@
-import pandas as pd
 from src.inputs import pedir_inputs
 import src.clases
 from src.validacion import validar_eleccion_graficos
@@ -34,11 +33,8 @@ poblacion.simulacion(cant_turnos_validado)
 
 
 #graficos
-<<<<<<< Updated upstream
+
 grafico = input("Graficos disponibles:\n 1: Poblacion por turnos\n 2: Ver la proporcion entre egoistas y altruistas\n 3: Porcentaje de altruistas y egoistas al inicio de la simulacion\n 4: Interacciones por tipo\n 5: Promedio de recursos al final de la simulacion\n 6: Reproducciones de altruistas y de egoistas\n 7: Total de muertes de egoistas y de altruistas\n Ingresar grafico: ")
-=======
-grafico = input("Graficos disponibles:\n 1: Poblacion por turnos\n  2: Ver la proporcion entre egoistas y altruistas\n 3: Porcentaje de altruistas y egoistas al inicio de la simulacion\n 4: Interacciones por tipo\n 5: Promedio de recursos al final de la simulacion\n 6: Reproducciones de altruistas y de egoistas\n 7: Total de muertes de egoistas y de altruistas\n Ingresar grafico: ")
->>>>>>> Stashed changes
 
 
 try:
