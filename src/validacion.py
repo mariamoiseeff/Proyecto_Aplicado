@@ -20,8 +20,8 @@ def validar_input(numero):
   ValueError
    Si el numero ingresado es negativo.
    '''
-  if type(numero) != int:
-     raise TypeError("el dato ingresado es tipo incorrecto, debe ser un numero entero")
+  if not isinstance(numero, int):
+     raise TypeError("el dato ingresado es incorrecto, debe ser un numero entero")
   if numero <= 0:
      raise ValueError("el numero ingresado no puede ser negativo, debe ser positivo")
   
@@ -49,7 +49,7 @@ def validar_eleccion_graficos(num):
     TypeError
       Si el numero ingresado es un tipo de dato incorrecto. 
     '''
-    if type(num) != int:
+    if not isinstance(num, int):
         raise TypeError("el dato ingresado es incorrecto, debe ser un numero entero")
     if num < 1 or num > 7:
         raise ValueError("el numero ingresado debe estar entre 1 y 7 ")
@@ -76,7 +76,7 @@ def validar_respuesta(otro_grafico):
       Si la respuesta ingresada es distinto a ("si, no")
     """
     
-    if type(otro_grafico) != str:
+    if not isinstance(otro_grafico, str):
         raise TypeError("el tipo de dato ingresado es incorrecto")
     if otro_grafico != "si" and otro_grafico != "no":
         raise ValueError("no es la respuesta esperada, ingrese (si o no)")
