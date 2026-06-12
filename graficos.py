@@ -58,11 +58,11 @@ def generar_graficos(df):
  
     
     columnas_necesarias = [
-        "turno", "cant_egoistas", "cant_altruistas",
+        "turno", "cant_egoistas", "cant_altruistas", "total_personas",
         "cant_interacciones_EE", "cant_interacciones_EA", "cant_interacciones_AA",
         "cant_interacciones_parientes",
-        "cant_reproducciones_A", "cant_reproducciones_E", "total_personas",
-        "recursos_totales_A", "recursos_totales_E"
+        "cant_reproducciones_A", "cant_reproducciones_E", "cant_muertes_E", "cant_muertes_A",
+        "recursos_promedio_A", "recursos_promedio_E"
     ]
     for col in columnas_necesarias:
         if col not in df.columns:
@@ -290,8 +290,8 @@ def grafico_5_recursos_promedio_final(df):
     # Calcular promedio evitando división por cero
     cant_A = int(ultima_fila["cant_altruistas"])
     cant_E = int(ultima_fila["cant_egoistas"])
-    promedio_A = float(ultima_fila["recursos_totales_A"]) / cant_A if cant_A > 0 else 0
-    promedio_E = float(ultima_fila["recursos_totales_E"]) / cant_E if cant_E > 0 else 0
+    promedio_A = float(ultima_fila["recursos_promedio_A"]) / cant_A if cant_A > 0 else 0
+    promedio_E = float(ultima_fila["recursos_promedio_E"]) / cant_E if cant_E > 0 else 0
  
     etiquetas = ["Altruista", "Egoísta"]
     valores   = [promedio_A, promedio_E]
