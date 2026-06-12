@@ -7,7 +7,7 @@ import pandas as pd
 class Persona:
     def __init__ (self, condicion, ID):
         '''
-        inicializa un objeto persona.
+        inicializa un objeto persona
 
         Parameters
         ----------
@@ -25,6 +25,10 @@ class Persona:
     def reproduccion(self): 
         '''
         crea un objeto persona con mismo ID y condicion
+        
+        returns: 
+            hijo --> un objeto persona
+            
         '''
         
         hijo = Persona(self.egoista , self.id)
@@ -48,6 +52,35 @@ class Poblacion:
             )
         
     def agregar_datos_turno(self, turno, interacciones_EE, interacciones_EA, interacciones_AA, interacciones_parientes, reproducciones_E, reproducciones_A , muertes_E , muertes_A): 
+        '''
+        Agrega los datos de una ronda de interacciones a un dataframe que registra la informacion de todo el turno
+
+        Parameters
+        ----------
+        turno : int
+            numero de ronda de la interaccion.
+        interacciones_EE : int
+            cantidad de interacciones entre dos egoistas registradas en la simulacion.
+        interacciones_EA : int
+            cantidad de interacciones entre un egoista y un altruista registradas en la simulacion.
+        interacciones_AA : int
+            cantidad de interacciones entre dos altruistas registradas en la simulacion.
+        interacciones_parientes : int
+            cantidad de interacciones entre dos parientes (EE - AA) registradas en la simulacion..
+        reproducciones_E : int
+            cant de reproducciones de los egoistas de una ronda.
+        reproducciones_A : int
+            cant de reproducciones de los egoistas de una ronda.
+        muertes_E : int
+            cant de muertes de los egoistas de una ronda.
+        muertes_A : int
+            cant de muertes de los altruistas de una ronda.
+
+        Returns
+        -------
+        None.
+
+        '''
         cant_egoistas = 0
         cant_altruistas = 0
         
@@ -104,6 +137,7 @@ class Poblacion:
     def ronda_interaccion(self):
         '''
         empareja aleatoriamente dos personas de la población, y depende la condición de altruista/egoísta distribuye recursos. 
+        
         returns: 
             interacciones_EE: int --> cantidad de interacciones entre dos egoistas por ronda
             interacciones_EA: int --> cantidad de interacciones entre egoista/altruista y altruista/egoista por ronda
@@ -116,9 +150,7 @@ class Poblacion:
         interacciones_parientes = 0
         
         lista_emparejamientos = self.personas.copy()
-        
-        #unifico codigo con par e inpar y corrigo proque de esa forma antes se salteaba personas de la lista
-        
+                
         if len(lista_emparejamientos) % 2 != 0:
             indice_excluido = random.randint(0, len(lista_emparejamientos)-1)
             lista_emparejamientos.pop(indice_excluido)
@@ -169,7 +201,14 @@ class Poblacion:
         cambia la lista del atributo de personas. 
         
         returns: 
-            repro
+            reproducciones_E : int
+                cant de reproducciones de los egoistas de una ronda.
+            reproducciones_A : int
+                cant de reproducciones de los egoistas de una ronda.
+            muertes_E : int
+                cant de muertes de los egoistas de una ronda.
+            muertes_A : int
+                cant de muertes de los altruistas de una ronda.
         '''
         reproducciones_E = 0
         reproducciones_A = 0
@@ -214,19 +253,10 @@ class Poblacion:
             if len(self.personas) == 0: 
                 print(f"Termino la simulacion antes de tiempo porque la poblacion se quedo in personas. Duro {turno} rondas. ")
                 break
+        print("Simulacion terminada")
         
 
 
-p1 = Persona(True, 1)
-Poblacion.agregar_personas(p1)
-p2 = Persona(False, 1)
-Poblacion.agregar_personas(p2)
-p3 = Persona(False, 2)
-Poblacion.agregar_personas(p3)
-p4 = Persona(False, 3)
-Poblacion.agregar_personas(p4)
-
-Poblacion.simulacion(10)
 
 
 
