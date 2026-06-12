@@ -3,12 +3,7 @@
 import random
 import pandas as pd
 
-#donde agrego esto?? nose si un metodo de poblacion o que sea una funcion aparte
-'''
-crear_personas (cant_altruistas_validada , cant_egoista_validada)
-crea objetos de persona con condición
-agrega (llamando al método de Población) a la lista de población
-'''
+
 class Persona:
     def __init__ (self, condicion, ID):
         '''
@@ -97,9 +92,11 @@ class Poblacion:
         parametros: 
             persona: objeto tipo Persona
         raise: 
-            ValueError si la persona que se quiere eliminar no esta en la lista
+            ValueError si la persona que se quiere eliminar no esta en la lista o si la lista esta vacia
         '''
-        if persona not in self.personas: 
+        if len(self.personas) == 0: 
+            raise ValueError("La lista esta vacia")
+        if persona not in self.personas.copy(): 
             raise ValueError("La persona que se esta queriendo eliminar de la poblacion no esta en la lista.")
        
         self.personas.remove(persona)
@@ -107,7 +104,11 @@ class Poblacion:
     def ronda_interaccion(self):
         '''
         empareja aleatoriamente dos personas de la población, y depende la condición de altruista/egoísta distribuye recursos. 
-        
+        returns: 
+            interacciones_EE: int --> cantidad de interacciones entre dos egoistas por ronda
+            interacciones_EA: int --> cantidad de interacciones entre egoista/altruista y altruista/egoista por ronda
+            interacciones_AA: int --> cantidad de interacciones entre dos altruista por ronda
+            interacciones_parientes: int --> cantidad de interacciones entre parientes por ronda (egoista/egoista y altruista/altruista)
         ''' 
         interacciones_EE = 0
         interacciones_EA = 0
@@ -116,88 +117,59 @@ class Poblacion:
         
         lista_emparejamientos = self.personas.copy()
         
-        if len(self.personas) %2 == 0: 
-
-            for persona in lista_emparejamientos: 
-                lista_emparejamientos.remove(persona)
-                indice_pareja = random.randint(0, len(lista_emparejamientos)-1)
-                pareja = lista_emparejamientos[indice_pareja]
-               
-                if (persona.egoista == True and pareja.egoista == False): 
-                    persona.recursos += 5 #hay que definir valor definitivo
-                    pareja.recursos -= 5
-                    interacciones_EA +=1
-                    
-                elif persona.egoista == False and pareja.egoista == True: 
-                    persona.recursos -= 5
-                    pareja.recursos += 5
-                    interacciones_EA +=1
-                    
-                elif persona.egoista == False and pareja.egoista == False: 
-                    interacciones_AA +=1
-                    if persona.id == pareja.id: #si los altruistas son parientes suman mas
-                        interacciones_parientes +=1
-                        persona.recursos +=2
-                        pareja.recursos +=2
-                    else: 
-                        persona.recursos += 1
-                        pareja.recursos +=1
-                        
-                elif persona.egoista == True and pareja.egoista == True: 
-                    interacciones_EE +=1
-                    if  persona.id == pareja.id: #esto es si los dos egoistas son parientes
-                        persona.recursos +=1
-                        pareja.recursos +=1
-                lista_emparejamientos.pop(indice_pareja)
-
+        #unifico codigo con par e inpar y corrigo proque de esa forma antes se salteaba personas de la lista
         
-        elif len(self.personas) %2 != 0: 
-            lista_emparejamientos = self.personas
-            indice_excluido = random.randint(0, len(lista_emparejamientos))
+        if len(lista_emparejamientos) % 2 != 0:
+            indice_excluido = random.randint(0, len(lista_emparejamientos)-1)
             lista_emparejamientos.pop(indice_excluido)
+
+        while len(lista_emparejamientos) >= 2:
+
+            persona = lista_emparejamientos[0]
+            lista_emparejamientos.remove(persona)
+
+            indice_pareja = random.randint(0, len(lista_emparejamientos)-1)
+            pareja = lista_emparejamientos[indice_pareja]
+
+            lista_emparejamientos.remove(pareja)
             
-            for persona in lista_emparejamientos: 
-                lista_emparejamientos.remove(persona)
-                indice_pareja = random.randint(0, len(lista_emparejamientos)-1)
-                pareja = lista_emparejamientos[indice_pareja]
+            if (persona.egoista == True and pareja.egoista == False): 
+                persona.recursos += 5 
+                pareja.recursos -= 5
+                interacciones_EA +=1
                 
-                if (persona.egoista == True and pareja.egoista == False): 
-                    persona.recursos += 5 
-                    pareja.recursos -= 5
-                    interacciones_EA +=1
-                    
-                elif persona.egoista == False and pareja.egoista == True: 
-                    persona.recursos -= 5
-                    pareja.recursos += 5
-                    interacciones_EA +=1
-                    
-                elif persona.egoista == False and pareja.egoista == False: 
-                    interacciones_AA +=1
-                    if persona.id == pareja.id: 
-                        interacciones_parientes +=1
-                        persona.recursos +=2
-                        pareja.recursos +=2
-                    else: 
-                        persona.recursos += 1
-                        pareja.recursos +=1
-                    
-                    
-                elif (persona.egoista == True and pareja.egoista == True): 
-                    interacciones_EE +=1
-                    if persona.id == pareja.id: 
-                        persona.recursos +=1
-                        pareja.recursos +=1
-                        interacciones_parientes +=1
+            elif persona.egoista == False and pareja.egoista == True: 
+                persona.recursos -= 5
+                pareja.recursos += 5
+                interacciones_EA +=1
                 
-                lista_emparejamientos.pop(indice_pareja)
-                lista_emparejamientos.remove(persona)
+            elif persona.egoista == False and pareja.egoista == False: 
+                interacciones_AA +=1
+                if persona.id == pareja.id: #si los altruistas son parientes suman mas
+                    interacciones_parientes +=1
+                    persona.recursos +=2
+                    pareja.recursos +=2
+                else: 
+                    persona.recursos += 1
+                    pareja.recursos +=1
+                    
+            elif persona.egoista == True and pareja.egoista == True: 
+                interacciones_EE +=1
+                if  persona.id == pareja.id: #esto es si los dos egoistas son parientes
+                    persona.recursos +=1
+                    pareja.recursos +=1
+
         
         return interacciones_EE, interacciones_EA, interacciones_AA, interacciones_parientes
-    
+  
+  
     def filtrar_poblacion(self): 
         '''
         filtra a las personas de la lista si se mueren o si se reproducen agrega otra
         cambia la lista del atributo de personas. 
+        
+        returns: 
+            repro
         '''
         reproducciones_E = 0
         reproducciones_A = 0
@@ -206,12 +178,15 @@ class Poblacion:
         
         for persona in self.personas: 
             if persona.recursos <= 0: 
-                if persona.egoista == True: 
-                    muertes_E =+1
+                try: 
+                    self.muerte(persona)
+                except ValueError as e: 
+                    return e
                 else: 
-                    muertes_A +=1
-                    
-                self.muerte(persona)
+                    if persona.egoista == True: 
+                        muertes_E += 1
+                    else: 
+                        muertes_A +=1   
                 
             if persona.recursos > 50: 
                 if persona.egoista == True: 
@@ -236,12 +211,25 @@ class Poblacion:
             interacciones_EE, interacciones_EA, interacciones_AA, interacciones_parientes = self.ronda_interaccion()
             reproducciones_E, reproducciones_A, muertes_E, muertes_A = self.filtrar_poblacion()
             self.agregar_datos_turno(turno, interacciones_EE, interacciones_EA, interacciones_AA, interacciones_parientes, reproducciones_E, reproducciones_A, muertes_E, muertes_A)
-            if len(self.pesonas) == 0: 
+            if len(self.personas) == 0: 
                 print(f"Termino la simulacion antes de tiempo porque la poblacion se quedo in personas. Duro {turno} rondas. ")
                 break
         
 
-                
+
+p1 = Persona(True, 1)
+Poblacion.agregar_personas(p1)
+p2 = Persona(False, 1)
+Poblacion.agregar_personas(p2)
+p3 = Persona(False, 2)
+Poblacion.agregar_personas(p3)
+p4 = Persona(False, 3)
+Poblacion.agregar_personas(p4)
+
+Poblacion.simulacion(10)
+
+
+
             
             
                     
