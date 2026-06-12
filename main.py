@@ -18,12 +18,12 @@ poblacion = src.clases.Poblacion()
 ID = 1
 for numero in range(cant_altruistas_validado):
     persona = src.clases.Persona(False, ID)
-    agregar_persona(persona)
+    poblacion.agregar_persona(persona)
     ID += 1
     
 for numero in range(cant_egoistas_validado):
     persona = src.clases.Persona(True, ID)
-    agregar_persona(persona)
+    poblacion.agregar_persona(persona)
     ID += 1
 
 # comienza simulacion
