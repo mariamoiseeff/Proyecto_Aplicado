@@ -55,3 +55,30 @@ def validar_eleccion_graficos(num):
         raise ValueError("el numero ingresado debe estar entre 1 y 7 ")
         
     return num
+
+def validar_respuesta(otro_grafico):
+    """
+    Parameters
+    ----------
+    otro_grafico : str
+        Ingresa la respuesta del usuario si es que desea o no seguir visualizando.
+        
+
+    Returns
+    -------
+    otro_grafico = str
+    
+    Raises:
+    -------
+    TypeError
+      Si el dato ingresado es incorrecto 
+    ValueError
+      Si la respuesta ingresada es distinto a ("si, no")
+    """
+    
+    if type(otro_grafico) != str:
+        raise TypeError("el tipo de dato ingresado es incorrecto")
+    if otro_grafico != "si" and otro_grafico != "no":
+        raise ValueError("no es la respuesta esperada, ingrese (si o no)")
+        
+    return otro_grafico 
