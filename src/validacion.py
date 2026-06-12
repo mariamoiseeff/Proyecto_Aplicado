@@ -21,7 +21,7 @@ def validar_input(numero):
    Si el numero ingresado es negativo.
    '''
   resultado = int(numero)
-  if numero <= 0:
+  if resultado <= 0:
      raise ValueError("el numero ingresado no puede ser negativo, debe ser positivo")
   
   return resultado
