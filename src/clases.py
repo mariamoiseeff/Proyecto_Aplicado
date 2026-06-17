@@ -207,6 +207,7 @@ class Poblacion:
             elif persona.egoista == True and pareja.egoista == True: 
                 interacciones_EE +=1
                 if  persona.id == pareja.id: #esto es si los dos egoistas son parientes
+                    interacciones_parientes += 1
                     persona.recursos +=1
                     pareja.recursos +=1
                     recursos_E += 2
