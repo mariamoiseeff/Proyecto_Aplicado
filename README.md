@@ -55,7 +55,10 @@ Se realizaron diagramas de:
 - Funciones principales. 
 
 12.⁠ ⁠Declaración de uso de IA.
-- Claude. ai
+Para realizar este proyecto, utilizamos la herramienta Claude.ai para ayudarnos con algunas dudas que nos fueron surgiendo.
+- Para validacion, le pedi a Claude: "recomendame una herramienta de programacion para validar un tipo de dato", asi fue como me recomendo utilizar isinstance().
+- Se le pidio a Claude que nos encuentre el error en el codigo si es que nosotras no lo podiamos encontrar.
+- Fue utilizada tambien para la elaboracion mas formal de algunos docstrings de los graficos
 (completar cada uno los prompts utilizados) 
 
 13.⁠ ⁠Notas o explicaciones adicionales para correr correctamente el programa.
