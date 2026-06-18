@@ -15,12 +15,11 @@ class Persona:
             TRUE si la persona creada es egoista y FALSE si la persona es altruista.
         ID : int
             id de persona creada (la usaremos despues para identificar a los "parientes" despues de la reproduccion).
-
-
         '''
+        
         self.egoista = condicion
         self.id = ID
-        self.recursos =  40 #tenemos que decidir el valor fijo
+        self.recursos =  40 
         
     def reproduccion(self): 
         '''
@@ -262,7 +261,7 @@ class Poblacion:
     
     def simulacion(self, rondas):
         '''
-        genera simulacion
+        genera simulacion. avisa cuando se termina la simulacion o si se termino antes porque no hay personas en la poblacion. 
         paramentros: 
             rondas: int --> numero de rondas ingresado por el ususario
         '''        
