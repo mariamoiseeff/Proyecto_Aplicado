@@ -1,5 +1,5 @@
 # Proyecto_Aplicado
-proyecto final de programación: simulación de interacciones entre egoistas y altruistas - selección natural
+Proyecto final de programación: simulación de interacciones entre egoistas y altruistas - selección natural
 
  1.⁠ ⁠Título de nuestro proyecto: 
  Simulacion de seleccion Natural del egoismo
@@ -9,10 +9,12 @@ proyecto final de programación: simulación de interacciones entre egoistas y a
  
  3.⁠ ⁠Objetivo, descripción general del funcionamiento del sistema, principales
 funcionalidades y adjudicación de la parte del programa que realizó cada integrante:
-El objetivo de nuestro programa es realizar una simulacion natural del comportamiento de los egoistas y altruistas, nuestra idea es demostrar que sobreviven mayormente los egoistas, ya que como plantea la teoria evolutiva, los humanos egoistas finalmente son los que se terminan reproduciendo y subsistiendo en el tiempo.
+El objetivo de nuestro programa es realizar una simulacion natural del comportamiento de los egoistas y altruistas, 
+nuestra idea es demostrar que sobreviven mayormente los egoistas, ya que como plantea la teoria evolutiva, 
+los humanos egoistas finalmente son los que se terminan reproduciendo y subsistiendo en el tiempo.
 
 DIVISION DEL TRABAJO:
-- Clara Antelo Cernadas: inputs, main.py
+- Clara Antelo Cernadas: inputs.py, main.py
 - Maria Moiseff: clases.py
 - Guadalupe Margiotta: validacion.py
 - Sofia Davivov: graficos.py
@@ -27,7 +29,7 @@ No utilizamos
 
  
  6.⁠ ⁠Librerías utilizadas.
- - Matplotlib.pyplot --> Creación y visualización de gráficos estadísticos de los resultados de la simulación
+ - Matplotlib.pyplot  → Creación y visualización de gráficos estadísticos de los resultados de la simulación
  - Random: Selección aleatoria de parejas e individuos para interactuar durante la simulación.
  - Pandas: Almacenamiento y procesamiento de los datos de cada turno mediante DataFrames.
 
@@ -44,7 +46,7 @@ No utilizamos
  - tambien, si llegan a tener 0 o menos recursos, se mueren (se los saca de la poblacion)
  
  Clase Poblacion: 
- - contiene a las personas de la poblacion e=almacenadas en una lista
+ - contiene a las personas de la poblacion almacenadas en una lista
  - guarda la informacion de los turnos de la simulacion en un DataFrames
  - tiene metodos para: 
      - agregar datos de una ronda a una fila del dataframe
@@ -61,11 +63,14 @@ No utilizamos
  
  
  9.⁠ ⁠Explicación breve de las funciones principales.
- - validar_input →  recibe como parametro un numero, que luego es transformado en entero. Funcion: Validar que el numero ingresado por el usuario sea del tipo de dato correcto y lo convierte a entero(int).
+ - validar_input → recibe como parametro un numero, que luego es transformado en entero. 
+     - Funcion: Validar que el numero ingresado por el usuario sea del tipo de dato correcto y lo convierte a entero(int).
  - validar_eleccion_grafico → recibe como parametro un numero
-Funcion: Validar que el numero ingresado por el usuario sea tipo de dato correcto y se encuentre dentro del rango indicado(1-7).
-- validar_respuesta → recibe como parametro un string
-Funcion: Validar que el tipo de dato sea correcto y que el string corresponda a un "si" o "no". 
+     - Funcion: Validar que el numero ingresado por el usuario sea tipo de dato correcto y se encuentre dentro del rango indicado(1-7).
+ - validar_respuesta → recibe como parametro un string
+     - Funcion: Validar que el tipo de dato sea correcto y que el string corresponda a un "si" o "no". 
+ -  pedir_inputs → recibe como parametro un mensaje, y pide los inputs 
+     - Funcion: Obtener los inputs requeridos para poder correr el programa (empezar la simulacion)
  
 10.⁠ ⁠Resultados, salidas, métricas, gráficos o funcionalidades generadas, según
 corresponda 
