@@ -15,10 +15,8 @@ def validar_input(numero):
 
   Raises:
   -----
-  TypeError
-   Si el tipo de dato ingresado por el usuario es incorrecto.
   ValueError
-   Si el numero ingresado es negativo.
+   Si el numero ingresado es negativo o si el numero no se pudo convertir a entero.
    '''
   resultado = int(numero)
   if resultado <= 0:
@@ -44,9 +42,7 @@ def validar_eleccion_graficos(num):
     -------
     ValueError
       Si el numero ingresado por el usuario es distinto a los 
-      graficos que estan disponibles.
-    TypeError
-      Si el numero ingresado es un tipo de dato incorrecto. 
+      graficos que estan disponibles o por si no se puede convertir el numero a entero. 
     '''
     resultado = int(num)
     if resultado < 1 or resultado > 7:
@@ -68,8 +64,6 @@ def validar_respuesta(otro_grafico):
     
     Raises:
     -------
-    TypeError
-      Si el dato ingresado es incorrecto 
     ValueError
       Si la respuesta ingresada es distinto a ("si, no")
     """
