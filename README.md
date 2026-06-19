@@ -79,9 +79,14 @@ No utilizamos
  -  pedir_inputs → recibe como parametro un mensaje, y pide los inputs 
      - Funcion: Obtener los inputs requeridos para poder correr el programa (empezar la simulacion)
  
-10.⁠ ⁠Resultados, salidas, métricas, gráficos o funcionalidades generadas, según
-corresponda 
-(falta) 
+10.⁠ ⁠Resultados, salidas, métricas, gráficos o funcionalidades generadas, según corresponda 
+    - los resultados son graficos de metricas caluladas de la simulacion y poblacion resultante
+    - 1: muestra como va cambiando la cantidad de altruistas y egoistas en la poblacion por cada turno. la idea es ver como sin importar las cantidades, los egoistas terminan por ensima de los altruistas
+    - 2 y 3: muestra proporciones de altruistas y egoistas en la poblacion al principio vs al final
+    - 4: cuenta las interacciones de cada tipo en total de la simulacion. como son aleatorias, queremos mostrar que paso en cada simulacion con parametros distintos. 
+    - 5: muestra promedio de recursos acumulados por altruistas y por egoistas en toda la simulacion
+    - 6: muestra total reproducciones de altruistas y egoistas de toda la simulacion
+    - 7: muestra total de muertes de cada uno en la simulacion
 
 11.⁠ ⁠Diagramas de diseño.
 Se encuentran en la carpeta "diagramas.py". 
