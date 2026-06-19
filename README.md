@@ -16,8 +16,8 @@ los humanos egoistas finalmente son los que se terminan reproduciendo y subsisti
 DIVISION DEL TRABAJO:
 - Clara Antelo Cernadas: inputs.py, main.py
 - Maria Moiseff: clases.py
-- Guadalupe Margiotta: validacion.py
-- Sofia Davivov: graficos.py
+- Guadalupe Margiotta: validacion.py, diagramas de flujo(validacion)
+- Sofia Davivov: graficos.py, diagramas de flujo(main y graficos)
 
  4.⁠ ⁠Descripción de la fuente de datos (en caso de haber utilizado una).
 No utilizamos 
@@ -106,14 +106,15 @@ Se realizaron diagramas de:
 
 12.⁠ ⁠Declaración de uso de IA.
 Para realizar este proyecto, utilizamos la herramienta Claude.ai y ChatGPT para ayudarnos con algunas dudas que nos fueron surgiendo.
-- Para validacion, le pedi a Claude: "recomendame una herramienta de programacion para validar un tipo de dato", asi fue como me recomendo utilizar isinstance().
+- Para validacion, se le pidio a Claude: "recomendame una herramienta de programacion para validar un tipo de dato", asi fue como me recomendo utilizar isinstance().
 - Se le pidio a Claude que nos encuentre el error en el codigo si es que nosotras no lo podiamos encontrar.
 - Fue utilizada tambien para la elaboracion mas formal de algunos docstrings de los graficos
 - Chat GPT nos ayudo a encontrar errores en el codigo y ver si funcionaba bien la simulacion antes de tener todo el programa listo. 
     - se le paso el documento de diseño del proyecto con el promt "esta bien mi codigo? funciona en crear las clases y los metodos de la simulacion?"
     - con la respuesta, ayudo a simplificar el codigo ya que habian cosas repetidas para llegar a la estructura del ciclo while de ahora. 
 - Chat GPT nos ayudo a programar como se iba a guardar la informacion en el dataframe de cada turno, ya que nos costaba pensar como podiamos crear una fila con toda la informacion en un dataframe vacio. El prompt fue: 
-    "rol: estudiante de programacion haciendo este trabajo aplicado que te explica el documento de diseño. necesito guardar la info de un turno en el dataframe. necesito que me ayudes con el codigo no se como hacerlo. noser si hacer un emtodo de poblacion separado o que"
+    "rol: estudiante de programacion haciendo este trabajo aplicado que te explica el documento de diseño. necesito guardar la info de un turno en el dataframe. necesito que me ayudes con el codigo que no se como hacerlo. nose si hacer un metodo de poblacion por separado o que"
+- Chat gpt me aconsejo la facilidad del programa en graficos sacando el diccionario para que el estilo no se haga de cada funcion, sino para que se haga directamente de forma global.
 
 13.⁠ ⁠Notas o explicaciones adicionales para correr correctamente el programa.
 - Leer atentamente lo que les pide los inputs para responder correctamente y evitar que el programa no salte con un ERROR. 
