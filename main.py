@@ -65,7 +65,6 @@ try:
     otro_grafico_valido = validar_respuesta(otro_grafico)
 except ValueError as e:
     print(e)
-    otro_grafico_valido = "No"
 
 while otro_grafico_valido == "Si":
    grafico = input("Graficos disponibles:\n 1: Poblacion por turnos\n 2: Ver la proporcion entre egoistas y altruistas\n 3: Porcentaje de altruistas y egoistas al inicio de la simulacion\n 4: Interacciones por tipo\n 5: Promedio de recursos al final de la simulacion\n 6: Reproducciones de altruistas y de egoistas\n 7: Total de muertes de egoistas y de altruistas\n Ingresar grafico: ")
