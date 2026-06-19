@@ -89,11 +89,13 @@ while otro_grafico_valido == "Si":
    elif grafico_validado == 7:
      grafico_pedido = grafico_7_muertes(poblacion.datos)        
 
-   otro_grafico = input("Desea ver otro grafico? (Si/No) ") 
-   try:
-       otro_grafico_valido = validar_respuesta(otro_grafico)
-   except ValueError as e:
-       print(e)
+   while True:
+       otro_grafico = input("Desea ver otro grafico? (Si/No) ") 
+       try:
+           otro_grafico_valido = validar_respuesta(otro_grafico)
+           break
+       except ValueError as e:
+           print(e)
 
 
 
