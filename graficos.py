@@ -111,6 +111,7 @@ def grafico_1_poblacion_por_turno(df):
     plt.tight_layout()
  
     plt.savefig("graficos/1_poblacion_por_turno.png", dpi=300)
+    plt.show () 
     plt.close()
     print("Gráfico guardado: graficos/1_poblacion_por_turno.png")
  
@@ -195,6 +196,7 @@ def _grafico_torta(conteo, titulo, nombre_archivo):
     ax.set_title(titulo, fontsize=13, fontweight="bold", pad=15)
     plt.tight_layout()
     plt.savefig(nombre_archivo, dpi=300)
+    plt.show() 
     plt.close()
  
 
@@ -252,6 +254,7 @@ def grafico_4_interacciones_por_tipo(df):
     plt.tight_layout()
  
     plt.savefig("graficos/4_interacciones_por_tipo.png", dpi=300)
+    plt.show() 
     plt.close()
     print("Gráfico guardado: graficos/4_interacciones_por_tipo.png")
  
@@ -318,6 +321,7 @@ def grafico_5_recursos_promedio_final(df):
     plt.tight_layout()
  
     plt.savefig("graficos/5_recursos_promedio_final.png", dpi=300)
+    plt.show() 
     plt.close()
     print("Gráfico guardado: graficos/5_recursos_promedio_final.png")
  
@@ -364,6 +368,7 @@ def grafico_6_reproducciones(df):
     plt.tight_layout()
  
     plt.savefig("graficos/6_reproducciones.png", dpi=300)
+    plt.show() 
     plt.close()
     print("Gráfico guardado: graficos/6_reproducciones.png")
  
@@ -422,6 +427,7 @@ def grafico_7_muertes(df):
     plt.tight_layout()
  
     plt.savefig("graficos/7_muertes.png", dpi=300)
+    plt.show()  
     plt.close()
     print("Gráfico guardado: graficos/7_muertes.png") 
  
