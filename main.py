@@ -42,7 +42,6 @@ try:
 except (ValueError, TypeError) as e:
     print(e)
 else: 
-    
     if grafico_validado == 1:
         grafico_pedido = grafico_1_poblacion_por_turno(poblacion.datos)
     elif grafico_validado == 2:

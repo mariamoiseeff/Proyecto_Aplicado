@@ -77,7 +77,7 @@ def validar_respuesta(otro_grafico):
     ValueError
       Si la respuesta ingresada es distinto a ("si, no")
     """
-    if otro_grafico != "si" and otro_grafico != "no":
+    if otro_grafico != "si" or otro_grafico != "no":
         raise ValueError("no es la respuesta esperada, ingrese (si o no)")
         
     return otro_grafico
