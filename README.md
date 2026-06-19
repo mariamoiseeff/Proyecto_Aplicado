@@ -82,6 +82,8 @@ No utilizamos
 10.⁠ ⁠Resultados, salidas, métricas, gráficos o funcionalidades generadas, según
 corresponda 
 - GRAFICOS/OUTPUTS:
+
+
     Gráfico 1:  Gráfico de líneas: Evolución de la población por turno Tiene dos líneas: una azul para altruistas y una roja para egoístas. Cada punto en la línea muestra cuántos individuos de ese tipo había en ese turno. Sirve para ver si una condición crece, decrece o desaparece a lo largo de la simulación.
   
     Gráfico 2: Gráfico de torta: Distribución final Tiene dos porciones: azul para altruistas y roja para egoístas. Muestra en porcentaje cómo quedó repartida la población al terminar la simulación. Es el resultado principal: qué condición dominó al final.
