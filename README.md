@@ -34,14 +34,14 @@ No utilizamos
  - Pandas: Almacenamiento y procesamiento de los datos de cada turno mediante DataFrames.
 
  7.⁠ ⁠Estructura del repositorio.
-    - src
-        - clases.py
-        - validacion.py
-        - inpts.py
-    - main.py
-    - graficos.py
-    - graficos → carpeta que muestra los graficos al final de la simulacion
-    - README
+ - src
+     - clases.py
+     - validacion.py
+      - inpts.py
+ - main.py
+ - graficos.py
+ - graficos → carpeta que muestra los graficos al final de la simulacion
+ - README
  
  
  8.⁠ ⁠Explicación breve de las clases implementadas (si corresponde).
@@ -94,10 +94,11 @@ El sistema permite:
 -  Calcula metricas relacionadas a como evoluciona la poblacion a lo largo del tiempo
 
 SALIDAS Y RESULTADOS:
+
  Una vez que la simulacion finaliza, el programa permite visualizr el comportamiento de la problacion a traves de las decisiones de las cantidades ingresadas por el usuario:
 - la cantidad de altruistas y egoistas en cada ronda 
 -  como evoluciona la poblacion a lo largo del tiempo (inicio-final, que poblacion aumento, quien disminuyo, etc.)
--  mustra recurson;x'x
+-  el promedio de los recursos acumulados 
 -  muestra las frecuencias de las distintas interacciones que se generaron(AA-EE,AA-AA, Etc)
 -  muestra el numero total de muertes o reproducciones
 

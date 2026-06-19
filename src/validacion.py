@@ -22,10 +22,10 @@ def validar_input(numero):
         resultado = int(numero)
 
     except ValueError:
-        raise ValueError("El dato ingresado debe ser un numero entero. ")
+        raise ValueError("ERROR: El dato ingresado debe ser un numero entero. ")
         
     if resultado <= 0: 
-       raise ValueError("el numero ingresado no puede ser negativo, debe ser positivo")
+       raise ValueError("ERROR: El numero ingresado no puede ser negativo, debe ser positivo")
    
     return resultado
   
@@ -53,10 +53,10 @@ def validar_eleccion_graficos(num):
     try: 
         resultado = int(num)
     except ValueError: 
-        raise ValueError("Informacion ingresada debe ser un numero entre 1 y 7")
+        raise ValueError("ERROR: Informacion ingresada debe ser un numero entre 1 y 7")
     else:
         if resultado < 1 or resultado > 7:
-            raise ValueError("el numero ingresado debe estar entre 1 y 7 ")
+            raise ValueError("ERROR: El numero ingresado debe estar entre 1 y 7 ")
         
     return resultado
 
@@ -78,6 +78,6 @@ def validar_respuesta(otro_grafico_valido):
       Si la respuesta ingresada es distinto a ("Si, No")
     """
     if otro_grafico_valido != "Si" and otro_grafico_valido != "No":
-        raise ValueError("no es la respuesta esperada, ingrese (Si o No)")
+        raise ValueError("ERROR: No es la respuesta esperada, ingrese Si o No")
         
     return otro_grafico_valido
