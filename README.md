@@ -34,14 +34,14 @@ No utilizamos
  - Pandas: Almacenamiento y procesamiento de los datos de cada turno mediante DataFrames.
 
  7.⁠ ⁠Estructura del repositorio.
-    - src
-        - clases.py
-        - validacion.py
-        - inpts.py
-    - main.py
-    - graficos.py
-    - graficos → carpeta que muestra los graficos al final de la simulacion
-    - README
+ - src
+     - clases.py
+     - validacion.py
+      - inpts.py
+ - main.py
+ - graficos.py
+ - graficos → carpeta que muestra los graficos al final de la simulacion
+ - README
  
  
  8.⁠ ⁠Explicación breve de las clases implementadas (si corresponde).
