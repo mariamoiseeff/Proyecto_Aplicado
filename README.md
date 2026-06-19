@@ -102,7 +102,7 @@ SALIDAS Y RESULTADOS:
 -  muestra las frecuencias de las distintas interacciones que se generaron(AA-EE,AA-AA, Etc)
 -  muestra el numero total de muertes o reproducciones
 
- - GRAFICOS/OUTPUTS:
+   GRAFICOS/OUTPUTS:
 
     Gráfico 1:  Gráfico de líneas: Evolución de la población por turno → Sirve para ver si una condición crece, decrece o desaparece a lo largo de la simulación.
   
