@@ -266,6 +266,7 @@ def grafico_5_recursos_promedio_final(df):
 
     cant_A = int(ultima_fila["cant_altruistas"])
     cant_E = int(ultima_fila["cant_egoistas"])
+<<<<<<< HEAD
 
     recursos_A = float(ultima_fila["recursos_totales_A"])
     recursos_E = float(ultima_fila["recursos_totales_E"])
@@ -273,6 +274,11 @@ def grafico_5_recursos_promedio_final(df):
     promedio_A = recursos_A / cant_A if cant_A > 0 else 0
     promedio_E = recursos_E / cant_E if cant_E > 0 else 0
 
+=======
+    promedio_A = float(ultima_fila["recursos_totales_A"]) / cant_A if cant_A > 0 else 0
+    promedio_E = float(ultima_fila["recursos_totales_E"]) / cant_E if cant_E > 0 else 0
+ 
+>>>>>>> 2b9d89f255b3ad930e51b0dfeee4d8d1fe4ad02b
     etiquetas = ["Altruista", "Egoísta"]
     valores   = [promedio_A, promedio_E]
     colores   = [COLOR_ALTRUISTA, COLOR_EGOISTA]
