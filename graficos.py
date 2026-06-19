@@ -290,8 +290,8 @@ def grafico_5_recursos_promedio_final(df):
     # Calcular promedio evitando división por cero
     cant_A = int(ultima_fila["cant_altruistas"])
     cant_E = int(ultima_fila["cant_egoistas"])
-    promedio_A = float(ultima_fila["recursos_promedio_A"]) / cant_A if cant_A > 0 else 0
-    promedio_E = float(ultima_fila["recursos_promedio_E"]) / cant_E if cant_E > 0 else 0
+    promedio_A = float(ultima_fila["recursos_totales_A"]) / cant_A if cant_A > 0 else 0
+    promedio_E = float(ultima_fila["recursos_totales_E"]) / cant_E if cant_E > 0 else 0
  
     etiquetas = ["Altruista", "Egoísta"]
     valores   = [promedio_A, promedio_E]

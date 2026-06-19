@@ -48,7 +48,7 @@ class Poblacion:
             ["turno" , "cant_egoistas" , "cant_altruistas" , "total_personas", 
              "cant_interacciones_EE", "cant_interacciones_EA" , "cant_interacciones_AA" , "cant_interacciones_parientes" ,
              "cant_reproducciones_E" , "cant_reproducciones_A", "cant_muertes_E", "cant_muertes_A",
-             "recursos_promedio_E" , "recursos_promedio_A"]
+             "recursos_totales_E" , "recursos_totales_A"]
             )
         
     def agregar_datos_turno(self, turno, interacciones_EE, interacciones_EA, interacciones_AA, interacciones_parientes, reproducciones_E, reproducciones_A , muertes_E , muertes_A, recursos_E, recursos_A): 
@@ -120,7 +120,7 @@ class Poblacion:
         
         parametros: 
             persona: objeto tipo Persona
-        return: None
+        
         '''
         
         self.personas.append(persona)
