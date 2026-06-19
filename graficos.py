@@ -53,7 +53,7 @@ def generar_graficos(df):
     Returns
     -------
     None
-        Guarda los 7 gráficos como archivos .png en la carpeta 'graficos/'.
+        Guarda los 7 gráficos como archivos .png en la carpeta 'outputs/'.
     """
  
     
@@ -69,7 +69,7 @@ def generar_graficos(df):
             print(f"Error: falta la columna '{col}' en el DataFrame.")
             return
  
-    os.makedirs("graficos", exist_ok=True)
+    os.makedirs("outputs", exist_ok=True)
  
     # Llama a cada gráfico en orden
     grafico_1_poblacion_por_turno(df)
@@ -80,7 +80,7 @@ def generar_graficos(df):
     grafico_6_reproducciones(df)
     grafico_7_muertes(df)
  
-    print("\nTodos los gráficos fueron guardados en la carpeta 'graficos/'.")
+    print("\nTodos los gráficos fueron guardados en la carpeta 'outputs/'.")
  
 
 #  GRÁFICO 1 — Población por turno (líneas):
@@ -110,10 +110,10 @@ def grafico_1_poblacion_por_turno(df):
     ax.legend(fontsize=10)
     plt.tight_layout()
  
-    plt.savefig("graficos/1_poblacion_por_turno.png", dpi=300)
+    plt.savefig("outputs/1_poblacion_por_turno.png", dpi=300)
     plt.show () 
     plt.close()
-    print("Gráfico guardado: graficos/1_poblacion_por_turno.png")
+    print("Gráfico guardado: outputs/1_poblacion_por_turno.png")
  
 
 #  GRÁFICO 2 — Torta final:
@@ -135,9 +135,9 @@ def grafico_2_torta_final(df):
     _grafico_torta(
         conteo,
         titulo="Distribución Final de la Población",
-        nombre_archivo="graficos/2_torta_final.png"
+        nombre_archivo="outputs/2_torta_final.png"
     )
-    print("Gráfico guardado: graficos/2_torta_final.png")
+    print("Gráfico guardado: outputs/2_torta_final.png")
  
 
 #  GRÁFICO 3 — Torta inicial:
@@ -159,9 +159,9 @@ def grafico_3_torta_inicial(df):
     _grafico_torta(
         conteo,
         titulo="Distribución Inicial de la Población",
-        nombre_archivo="graficos/3_torta_inicial.png"
+        nombre_archivo="outputs/3_torta_inicial.png"
     )
-    print("Gráfico guardado: graficos/3_torta_inicial.png")
+    print("Gráfico guardado: outputs/3_torta_inicial.png")
  
  
 def _grafico_torta(conteo, titulo, nombre_archivo):
@@ -253,10 +253,10 @@ def grafico_4_interacciones_por_tipo(df):
     ax.set_ylabel("Cantidad", fontsize=11)
     plt.tight_layout()
  
-    plt.savefig("graficos/4_interacciones_por_tipo.png", dpi=300)
+    plt.savefig("outputs/4_interacciones_por_tipo.png", dpi=300)
     plt.show() 
     plt.close()
-    print("Gráfico guardado: graficos/4_interacciones_por_tipo.png")
+    print("Gráfico guardado: outputs/4_interacciones_por_tipo.png")
  
 
 #  GRÁFICO 5 — Recursos promedio final (barras):
@@ -321,11 +321,11 @@ def grafico_5_recursos_promedio_final(df):
     ax.set_ylabel("Recursos promedio", fontsize=11)
 
     plt.tight_layout()
-    plt.savefig("graficos/5_recursos_promedio_final.png", dpi=300)
+    plt.savefig("outputs/5_recursos_promedio_final.png", dpi=300)
     plt.show() 
     plt.close()
 
-    print("Gráfico guardado: graficos/5_recursos_promedio_final.png")
+    print("Gráfico guardado: outputs/5_recursos_promedio_final.png")
  
 
 #  GRÁFICO 6 — Reproducciones A vs E (barras):
@@ -369,10 +369,10 @@ def grafico_6_reproducciones(df):
     ax.set_ylabel("Cantidad de reproducciones", fontsize=11)
     plt.tight_layout()
  
-    plt.savefig("graficos/6_reproducciones.png", dpi=300)
+    plt.savefig("outputs/6_reproducciones.png", dpi=300)
     plt.show() 
     plt.close()
-    print("Gráfico guardado: graficos/6_reproducciones.png")
+    print("Gráfico guardado: outputs/6_reproducciones.png")
  
 
 #  GRÁFICO 7 — Muertes A vs E (barras):
@@ -428,10 +428,10 @@ def grafico_7_muertes(df):
     ax.set_ylabel("Cantidad de muertes", fontsize=11)
     plt.tight_layout()
  
-    plt.savefig("graficos/7_muertes.png", dpi=300)
+    plt.savefig("outputs/7_muertes.png", dpi=300)
     plt.show()  
     plt.close()
-    print("Gráfico guardado: graficos/7_muertes.png") 
+    print("Gráfico guardado: outputs/7_muertes.png") 
  
  
 
