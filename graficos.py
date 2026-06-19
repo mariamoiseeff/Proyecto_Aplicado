@@ -314,20 +314,6 @@ def grafico_5_recursos_promedio_final(df):
     # Línea de referencia en 0
     ax.axhline(0, color="black", linewidth=1)
 
-    # Etiquetas encima/debajo de la barra
-    for barra in barras:
-        altura = barra.get_height()
-        offset = 0.3 if altura >= 0 else -0.3
-
-        ax.text(
-            barra.get_x() + barra.get_width() / 2,
-            altura + offset,
-            f"{altura:.1f}",
-            ha="center",
-            va="bottom" if altura >= 0 else "top",
-            fontsize=11
-        )
-
     ax.set_title("Recursos Promedio por Condición (solo turnos válidos)",
                  fontsize=13, fontweight="bold", pad=12)
     ax.set_xlabel("Condición", fontsize=11)
