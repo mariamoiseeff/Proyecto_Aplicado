@@ -262,11 +262,37 @@ def grafico_4_interacciones_por_tipo(df):
 #  GRÁFICO 5 — Recursos promedio final (barras):
  
 def grafico_5_recursos_promedio_final(df):
+    """
+    Gráfico de barras con dos barras: una para altruistas y una para egoístas.
+    Muestra el promedio de recursos por individuo de cada condición al final de la simulación (último turno).
+
+     El promedio se calcula directamente a partir de los recursos totales almacenados en el DataFrame y la cantidad de individuos del último turno:
+
+     promedio_A = recursos_totales_A / cant_altruistas
+     promedio_E = recursos_totales_E / cant_egoistas
+
+     Se utiliza el último registro del DataFrame (último turno) para ambos valores.
+     En caso de que alguna población sea 0, el promedio se define como 0 para evitar división por cero.
+
+     Parameters
+     ----------
+     df : pandas.DataFrame
+         DataFrame con una fila por turno de la simulación.
+         Debe contener:
+             - cant_altruistas
+             - cant_egoistas
+             - recursos_totales_A
+             - recursos_totales_E
+
+     Returns
+     -------
+     None
+         Guarda el gráfico en 'graficos/5_recursos_promedio_final.png'.
+     """
     ultima_fila = df.iloc[-1]
 
     cant_A = int(ultima_fila["cant_altruistas"])
     cant_E = int(ultima_fila["cant_egoistas"])
-<<<<<<< HEAD
 
     recursos_A = float(ultima_fila["recursos_totales_A"])
     recursos_E = float(ultima_fila["recursos_totales_E"])
@@ -274,11 +300,9 @@ def grafico_5_recursos_promedio_final(df):
     promedio_A = recursos_A / cant_A if cant_A > 0 else 0
     promedio_E = recursos_E / cant_E if cant_E > 0 else 0
 
-=======
     promedio_A = float(ultima_fila["recursos_totales_A"]) / cant_A if cant_A > 0 else 0
     promedio_E = float(ultima_fila["recursos_totales_E"]) / cant_E if cant_E > 0 else 0
  
->>>>>>> 2b9d89f255b3ad930e51b0dfeee4d8d1fe4ad02b
     etiquetas = ["Altruista", "Egoísta"]
     valores   = [promedio_A, promedio_E]
     colores   = [COLOR_ALTRUISTA, COLOR_EGOISTA]
