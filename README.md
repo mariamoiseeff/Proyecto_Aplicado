@@ -37,7 +37,7 @@ No utilizamos
  - src
      - clases.py
      - validacion.py
-      - inpts.py
+      - inputs.py
  - main.py
  - graficos.py
  - graficos → carpeta que muestra los graficos al final de la simulacion
