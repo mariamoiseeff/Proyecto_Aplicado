@@ -61,8 +61,13 @@ else:
 
 
 otro_grafico = input("Desea ver otro grafico? (Si/No) ") 
-otro_grafico_valido = validar_respuesta(otro_grafico)
-while otro_grafico != "No":
+try:
+    otro_grafico_valido = validar_respuesta(otro_grafico)
+except ValueError as e:
+    print(e)
+    otro_grafico_valido = "No"
+
+while otro_grafico_valido == "Si":
    grafico = input("Graficos disponibles:\n 1: Poblacion por turnos\n 2: Ver la proporcion entre egoistas y altruistas\n 3: Porcentaje de altruistas y egoistas al inicio de la simulacion\n 4: Interacciones por tipo\n 5: Promedio de recursos al final de la simulacion\n 6: Reproducciones de altruistas y de egoistas\n 7: Total de muertes de egoistas y de altruistas\n Ingresar grafico: ")
    try:
        grafico_validado = validar_eleccion_graficos(grafico)
@@ -85,6 +90,10 @@ while otro_grafico != "No":
      grafico_pedido = grafico_7_muertes(poblacion.datos)        
 
    otro_grafico = input("Desea ver otro grafico? (Si/No) ") 
-   otro_grafico_valido = validar_respuesta(otro_grafico)
+   try:
+       otro_grafico_valido = validar_respuesta(otro_grafico)
+   except ValueError as e:
+       print(e)
+
 
 

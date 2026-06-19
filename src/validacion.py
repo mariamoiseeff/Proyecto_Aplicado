@@ -60,7 +60,7 @@ def validar_eleccion_graficos(num):
         
     return resultado
 
-def validar_respuesta(otro_grafico):
+def validar_respuesta(otro_grafico_valido):
     """
     Parameters
     ----------
@@ -75,9 +75,9 @@ def validar_respuesta(otro_grafico):
     Raises:
     -------
     ValueError
-      Si la respuesta ingresada es distinto a ("si, no")
+      Si la respuesta ingresada es distinto a ("Si, No")
     """
-    if otro_grafico != "si" or otro_grafico != "no":
-        raise ValueError("no es la respuesta esperada, ingrese (si o no)")
+    if otro_grafico_valido != "Si" and otro_grafico_valido != "No":
+        raise ValueError("no es la respuesta esperada, ingrese (Si o No)")
         
-    return otro_grafico
+    return otro_grafico_valido
