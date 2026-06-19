@@ -260,68 +260,75 @@ def grafico_4_interacciones_por_tipo(df):
  
 
 #  GRÁFICO 5 — Recursos promedio final (barras):
- 
+
 def grafico_5_recursos_promedio_final(df):
     """
-    Gráfico de barras con dos barras: una para altruistas y una para egoístas.
-    Muestra el promedio de recursos por individuo de cada condición al final de la simulación (último turno).
+    Gráfico de barras que muestra el promedio de recursos por individuo
+    para altruistas y egoístas, calculado sobre los turnos válidos de la simulación.
 
-     El promedio se calcula directamente a partir de los recursos totales almacenados en el DataFrame y la cantidad de individuos del último turno:
+    El cálculo se realiza en dos pasos:
+    1) Se filtran los turnos donde ambas poblaciones son mayores a 0.
+    2) Para cada turno válido se calcula el promedio:
+            recursos_totales / cantidad de individuos
+       y luego se obtiene el promedio final a lo largo del tiempo.
 
-     promedio_A = recursos_totales_A / cant_altruistas
-     promedio_E = recursos_totales_E / cant_egoistas
+    Esto evita divisiones por cero cuando alguna población se extingue
+    durante la simulación.
 
-     Se utiliza el último registro del DataFrame (último turno) para ambos valores.
-     En caso de que alguna población sea 0, el promedio se define como 0 para evitar división por cero.
+    Parameters
+    ----------
+    df : pandas.DataFrame
+        DataFrame con una fila por turno. Debe contener:
+            - cant_altruistas
+            - cant_egoistas
+            - recursos_totales_A
+            - recursos_totales_E
 
-     Parameters
-     ----------
-     df : pandas.DataFrame
-         DataFrame con una fila por turno de la simulación.
-         Debe contener:
-             - cant_altruistas
-             - cant_egoistas
-             - recursos_totales_A
-             - recursos_totales_E
+    Returns
+    -------
+    None
+        Guarda el gráfico en 'graficos/5_recursos_promedio_final.png'.
+    """
 
-     Returns
-     -------
-     None
-         Guarda el gráfico en 'graficos/5_recursos_promedio_final.png'.
-     """
-    ultima_fila = df.iloc[-1]
+    # Solo usamos turnos donde hay población válida
+    df_valid = df[(df["cant_altruistas"] > 0) & (df["cant_egoistas"] > 0)]
 
-    cant_A = int(ultima_fila["cant_altruistas"])
-    cant_E = int(ultima_fila["cant_egoistas"])
+    if df_valid.empty:
+        print("Gráfico 5 omitido: no hay datos válidos (poblaciones en 0).")
+        return
 
-    recursos_A = float(ultima_fila["recursos_totales_A"])
-    recursos_E = float(ultima_fila["recursos_totales_E"])
+    # Promedio por turno primero, luego promedio temporal
+    promedio_A = (df_valid["recursos_totales_A"] / df_valid["cant_altruistas"]).mean()
+    promedio_E = (df_valid["recursos_totales_E"] / df_valid["cant_egoistas"]).mean()
 
-    promedio_A = recursos_A / cant_A if cant_A > 0 else 0
-    promedio_E = recursos_E / cant_E if cant_E > 0 else 0
-
-    promedio_A = float(ultima_fila["recursos_totales_A"]) / cant_A if cant_A > 0 else 0
-    promedio_E = float(ultima_fila["recursos_totales_E"]) / cant_E if cant_E > 0 else 0
- 
     etiquetas = ["Altruista", "Egoísta"]
     valores   = [promedio_A, promedio_E]
     colores   = [COLOR_ALTRUISTA, COLOR_EGOISTA]
 
     fig, ax = plt.subplots(figsize=(7, 5))
+
     barras = ax.bar(etiquetas, valores,
                     color=colores, edgecolor="white",
                     linewidth=1.2, alpha=0.85, width=0.5)
 
+    # Línea de referencia en 0
+    ax.axhline(0, color="black", linewidth=1)
+
+    # Etiquetas encima/debajo de la barra
     for barra in barras:
         altura = barra.get_height()
+        offset = 0.3 if altura >= 0 else -0.3
+
         ax.text(
             barra.get_x() + barra.get_width() / 2,
-            altura + 0.3,
+            altura + offset,
             f"{altura:.1f}",
-            ha="center", va="bottom", fontsize=11
+            ha="center",
+            va="bottom" if altura >= 0 else "top",
+            fontsize=11
         )
 
-    ax.set_title("Recursos Promedio por Condición al Final",
+    ax.set_title("Recursos Promedio por Condición (solo turnos válidos)",
                  fontsize=13, fontweight="bold", pad=12)
     ax.set_xlabel("Condición", fontsize=11)
     ax.set_ylabel("Recursos promedio", fontsize=11)
