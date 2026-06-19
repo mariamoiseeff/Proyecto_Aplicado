@@ -53,7 +53,7 @@ def generar_graficos(df):
     Returns
     -------
     None
-        Guarda los 7 gráficos como archivos .png en la carpeta 'graficos/'.
+        Guarda los 7 gráficos como archivos .png en la carpeta 'outputs/'.
     """
  
     
