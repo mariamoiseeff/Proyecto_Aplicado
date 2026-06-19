@@ -81,8 +81,23 @@ No utilizamos
  
 10.⁠ ⁠Resultados, salidas, métricas, gráficos o funcionalidades generadas, según
 corresponda 
-(falta) 
+- GRAFICOS/OUTPUTS:
+    Gráfico 1:  
+        Gráfico de líneas: Evolución de la población por turno Tiene dos líneas: una azul para altruistas y una roja para egoístas. Cada punto en la línea muestra cuántos individuos de ese tipo había en ese turno. Sirve para ver si una condición crece, decrece o desaparece a lo largo de la simulación.
+    Gráfico 2:
+        Gráfico de torta: Distribución final Tiene dos porciones: azul para altruistas y roja para egoístas. Muestra en porcentaje cómo quedó repartida la población al terminar la simulación. Es el resultado principal: qué condición dominó al final.
+    Gráfico 3:
+        Gráfico de torta: Distribución inicial Igual que el gráfico 2 pero con los datos del primer turno. Sirve para compararlo con el gráfico 2 y ver cuánto cambió la proporción entre el inicio y el final de la simulación.
+    Gráfico 4:
+        Gráfico de barras: Interacciones por tipo, Tiene cuatro barras: AA, AE, EE y parientes. La altura de cada barra muestra cuántas veces ocurrió ese tipo de encuentro durante toda la simulación. Sirve para ver qué combinación fue más frecuente y si eso tuvo relación con el resultado final.  
+    Gráfico 5:
+        Gráfico de barras: Recursos promedio al final Tiene dos barras, una azul para altruistas y una roja para egoístas. La altura de cada barra muestra el promedio de recursos que tiene cada individuo de esa condición al terminar la simulación. Sirve para ver cuál de las dos condiciones terminó acumulando más recursos.
+    Gráfico 6:
+        Gráfico de barras: Reproducciones por condición. Tiene dos barras, una azul para altruistas y una roja para egoístas. La altura de cada barra muestra el total de reproducciones que tuvo cada condición durante toda la simulación. Sirve para ver qué condición se reproduce más a lo largo del juego.
+    Gráfico 7: 
+        Gráfico de barras: Muertes por condición. Tiene dos barras, una azul para altruistas y una roja para egoístas. La altura de cada barra muestra el total de muertes que tuvo cada condición durante toda la simulación. Sirve para ver qué condición tuvo más bajas y relacionarlo con el resultado final.
 
+ 
 11.⁠ ⁠Diagramas de diseño.
 Se encuentran en la carpeta "diagramas.py". 
 Se realizaron diagramas de:
