@@ -1,28 +1,33 @@
 #validacion.py
 
 def validar_input(numero):
-  '''
-  Valida que el numero ingresado por el usuario sea del tipo de dato correcto y lo convierte a entero(int).
+    '''
+    Valida que el numero ingresado por el usuario sea del tipo de dato correcto y lo convierte a entero(int).
 
-  Parametros:
-  -----------
-  numero: int
-    numero ingresado por el usuario.
+    Parametros:
+    -----------
+    numero: int
+      numero ingresado por el usuario.
 
-  Returns:
-  --------
-  numero: int 
+    Returns:
+    --------
+    numero: int 
 
-  Raises:
-  -----
-  ValueError
-   Si el numero ingresado es negativo o si el numero no se pudo convertir a entero.
-   '''
-  resultado = int(numero)
-  if resultado <= 0:
-     raise ValueError("el numero ingresado no puede ser negativo, debe ser positivo")
-  
-  return resultado
+    Raises:
+    -----
+    ValueError
+        Si el numero ingresado es negativo o si el numero no se pudo convertir a entero.
+     '''
+    try: 
+        resultado = int(numero)
+
+    except ValueError:
+        raise ValueError("El dato ingresado debe ser un numero entero. ")
+        
+    if resultado <= 0: 
+       raise ValueError("el numero ingresado no puede ser negativo, debe ser positivo")
+   
+    return resultado
   
 
 def validar_eleccion_graficos(num):
@@ -40,13 +45,18 @@ def validar_eleccion_graficos(num):
     
     Raises:
     -------
+
     ValueError
       Si el numero ingresado por el usuario es distinto a los 
       graficos que estan disponibles o por si no se puede convertir el numero a entero. 
     '''
-    resultado = int(num)
-    if resultado < 1 or resultado > 7:
-        raise ValueError("el numero ingresado debe estar entre 1 y 7 ")
+    try: 
+        resultado = int(num)
+    except ValueError: 
+        raise ValueError("Informacion ingresada debe ser un numero entre 1 y 7")
+    else:
+        if resultado < 1 or resultado > 7:
+            raise ValueError("el numero ingresado debe estar entre 1 y 7 ")
         
     return resultado
 
