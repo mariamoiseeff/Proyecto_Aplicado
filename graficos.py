@@ -272,8 +272,9 @@ def grafico_5_recursos_promedio_final(df):
             recursos_totales / cantidad de individuos
        y luego se obtiene el promedio final a lo largo del tiempo.
 
-    Esto evita divisiones por cero cuando alguna población se extingue
-    durante la simulación.
+    El gráfico compara el promedio de recursos entre altruistas y egoístas
+    al final de la simulación, mostrando posibles diferencias entre ambas
+    estrategias de comportamiento.
 
     Parameters
     ----------
