@@ -262,49 +262,26 @@ def grafico_4_interacciones_por_tipo(df):
 #  GRÁFICO 5 — Recursos promedio final (barras):
  
 def grafico_5_recursos_promedio_final(df):
-    """
-    Gráfico de barras con dos barras: una para altruistas y una para egoístas.
-    Muestra el promedio de recursos por individuo de cada condición
-    al final de la simulación (último turno).
- 
-    El promedio se calcula acá directamente dividiendo los recursos totales
-    de cada condición por la cantidad de personas de esa condición en el
-    último turno:
-        promedio_A = recursos_totales_A / cant_altruistas  (último turno)
-        promedio_E = recursos_totales_E / cant_egoistas    (último turno)
- 
-    Para evitar división por cero (si una condición se extinguió), se verifica
-    que cant_altruistas y cant_egoistas sean mayores a 0 antes de dividir.
-    Si alguna condición tiene 0 individuos, su promedio se muestra como 0.
- 
-    El DataFrame necesita las columnas 'recursos_totales_A' y 'recursos_totales_E'
-    que agrega el grupo en la parte de simulación.
- 
-    Encima de cada barra se muestra el valor con un decimal.
-    """
-    # Verificar que existan las columnas de recursos totales
-    if "recursos_totales_A" not in df.columns or "recursos_totales_E" not in df.columns:
-        print("Gráfico 5 omitido: el DataFrame necesita columnas "
-              "'recursos_totales_A' y 'recursos_totales_E'.")
-        return
- 
     ultima_fila = df.iloc[-1]
- 
-    # Calcular promedio evitando división por cero
+
     cant_A = int(ultima_fila["cant_altruistas"])
     cant_E = int(ultima_fila["cant_egoistas"])
-    promedio_A = float(ultima_fila["recursos_promedio_A"]) / cant_A if cant_A > 0 else 0
-    promedio_E = float(ultima_fila["recursos_promedio_E"]) / cant_E if cant_E > 0 else 0
- 
+
+    recursos_A = float(ultima_fila["recursos_totales_A"])
+    recursos_E = float(ultima_fila["recursos_totales_E"])
+
+    promedio_A = recursos_A / cant_A if cant_A > 0 else 0
+    promedio_E = recursos_E / cant_E if cant_E > 0 else 0
+
     etiquetas = ["Altruista", "Egoísta"]
     valores   = [promedio_A, promedio_E]
     colores   = [COLOR_ALTRUISTA, COLOR_EGOISTA]
- 
+
     fig, ax = plt.subplots(figsize=(7, 5))
     barras = ax.bar(etiquetas, valores,
                     color=colores, edgecolor="white",
                     linewidth=1.2, alpha=0.85, width=0.5)
- 
+
     for barra in barras:
         altura = barra.get_height()
         ax.text(
@@ -313,16 +290,17 @@ def grafico_5_recursos_promedio_final(df):
             f"{altura:.1f}",
             ha="center", va="bottom", fontsize=11
         )
- 
+
     ax.set_title("Recursos Promedio por Condición al Final",
                  fontsize=13, fontweight="bold", pad=12)
     ax.set_xlabel("Condición", fontsize=11)
     ax.set_ylabel("Recursos promedio", fontsize=11)
+
     plt.tight_layout()
- 
     plt.savefig("graficos/5_recursos_promedio_final.png", dpi=300)
-    plt.show() 
+    plt.show()
     plt.close()
+
     print("Gráfico guardado: graficos/5_recursos_promedio_final.png")
  
 
