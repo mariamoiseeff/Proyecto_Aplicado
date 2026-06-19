@@ -101,7 +101,7 @@ else:
            except ValueError as e:
                print(e)
        if otro_grafico_valido == "No":
-           print("Simulacion finalizada")
+           print("Simulacion finalizada") 
     
 
 
