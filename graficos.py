@@ -312,7 +312,7 @@ def grafico_5_recursos_promedio_final(df):
                     linewidth=1.2, alpha=0.85, width=0.5)
 
     # Línea de referencia en 0
-    ax.axhline(0, color="black", linewidth=1)
+    ax.axhline(0, color="black", linewidth=1) 
 
     ax.set_title("Recursos Promedio por Condición (solo turnos válidos)",
                  fontsize=13, fontweight="bold", pad=12)
@@ -321,7 +321,7 @@ def grafico_5_recursos_promedio_final(df):
 
     plt.tight_layout()
     plt.savefig("graficos/5_recursos_promedio_final.png", dpi=300)
-    plt.show()
+    plt.show() 
     plt.close()
 
     print("Gráfico guardado: graficos/5_recursos_promedio_final.png")
