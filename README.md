@@ -83,25 +83,25 @@ No utilizamos
 10.⁠ ⁠Resultados, salidas, métricas, gráficos o funcionalidades generadas, según
 corresponda 
 
-- FUNCIONALIDADES GENERADAS:
+FUNCIONALIDADES GENERADAS:
 
 El sistema permite:
-→ registrar la cantidad inicial de individuos altruistas y egoistas
-→ configurar la cantidad de rondas en la simulacion 
-→ Validar los datos ingresados por el usuario para garantizar el correcto funcionamiento del programa 
-→ Ejecuta una simulacion de la evolucion de la poblacion entre altruistas y egoistas
-→ Genera DataFrames por ronda para almacenar el estado de la poblacion en ese momento y poder visualizarla 
-→ Calcula metricas relacionadas a como evoluciona la poblacion a lo largo del tiempo
+-  registrar la cantidad inicial de individuos altruistas y egoistas
+- configurar la cantidad de rondas en la simulacion 
+-  Validar los datos ingresados por el usuario para garantizar el correcto funcionamiento del programa 
+- Ejecuta una simulacion de la evolucion de la poblacion entre altruistas y egoistas
+-  Genera DataFrames por ronda para almacenar el estado de la poblacion en ese momento y poder visualizarla 
+-  Calcula metricas relacionadas a como evoluciona la poblacion a lo largo del tiempo
 
 SALIDAS Y RESULTADOS:
-Una vez que la simulacion finaliza, el programa permite visualizr el comportamiento de la problacion a traves de las decisiones de las cantidades ingresadas por el usuario:
-→ la cantidad de altruistas y egoistas en cada ronda 
-→ como evoluciona la poblacion a lo largo del tiempo (inicio-final, que poblacion aumento, quien disminuyo, etc.)
-→ mustra recurson;x'x
-→ muestra las frecuencias de las distintas interacciones que se generaron(AA-EE,AA-AA, Etc)
-→ muestra el numero total de muertes o reproducciones
+ Una vez que la simulacion finaliza, el programa permite visualizr el comportamiento de la problacion a traves de las decisiones de las cantidades ingresadas por el usuario:
+- la cantidad de altruistas y egoistas en cada ronda 
+-  como evoluciona la poblacion a lo largo del tiempo (inicio-final, que poblacion aumento, quien disminuyo, etc.)
+-  mustra recurson;x'x
+-  muestra las frecuencias de las distintas interacciones que se generaron(AA-EE,AA-AA, Etc)
+-  muestra el numero total de muertes o reproducciones
 
-- GRAFICOS/OUTPUTS:
+ - GRAFICOS/OUTPUTS:
 
     Gráfico 1:  Gráfico de líneas: Evolución de la población por turno → Sirve para ver si una condición crece, decrece o desaparece a lo largo de la simulación.
   
