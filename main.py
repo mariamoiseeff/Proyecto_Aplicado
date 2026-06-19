@@ -1,6 +1,7 @@
 from src.inputs import pedir_inputs
 import src.clases
 from src.validacion import validar_eleccion_graficos
+from src.validacion import validar_respuesta
 from graficos import grafico_1_poblacion_por_turno
 from graficos import grafico_2_torta_final
 from graficos import grafico_3_torta_inicial
@@ -57,12 +58,10 @@ else:
     elif grafico_validado == 7:
         grafico_pedido = grafico_7_muertes(poblacion.datos)
 
-try:
-    otro_grafico = input("Desea ver otro grafico? (Si/No) ")
-except TypeError as e:
-    print(e)
 
-  
+
+otro_grafico = input("Desea ver otro grafico? (Si/No) ") 
+otro_grafico_valido = validar_respuesta(otro_grafico)
 while otro_grafico != "No":
    grafico = input("Graficos disponibles:\n 1: Poblacion por turnos\n 2: Ver la proporcion entre egoistas y altruistas\n 3: Porcentaje de altruistas y egoistas al inicio de la simulacion\n 4: Interacciones por tipo\n 5: Promedio de recursos al final de la simulacion\n 6: Reproducciones de altruistas y de egoistas\n 7: Total de muertes de egoistas y de altruistas\n Ingresar grafico: ")
    try:
@@ -85,9 +84,7 @@ while otro_grafico != "No":
    elif grafico_validado == 7:
      grafico_pedido = grafico_7_muertes(poblacion.datos)        
 
-   try:
-       otro_grafico = input("Desea ver otro grafico? (Si/No) ")
-   except TypeError as e:
-       print(e)
+   otro_grafico = input("Desea ver otro grafico? (Si/No) ") 
+   otro_grafico_valido = validar_respuesta(otro_grafico)
 
 
