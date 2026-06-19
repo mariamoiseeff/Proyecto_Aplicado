@@ -79,21 +79,10 @@ No utilizamos
  -  pedir_inputs → recibe como parametro un mensaje, y pide los inputs 
      - Funcion: Obtener los inputs requeridos para poder correr el programa (empezar la simulacion)
  
-<<<<<<< HEAD
-10.⁠ ⁠Resultados, salidas, métricas, gráficos o funcionalidades generadas, según corresponda 
-    - los resultados son graficos de metricas caluladas de la simulacion y poblacion resultante
-    - 1: muestra como va cambiando la cantidad de altruistas y egoistas en la poblacion por cada turno. la idea es ver como sin importar las cantidades, los egoistas terminan por ensima de los altruistas
-    - 2 y 3: muestra proporciones de altruistas y egoistas en la poblacion al principio vs al final
-    - 4: cuenta las interacciones de cada tipo en total de la simulacion. como son aleatorias, queremos mostrar que paso en cada simulacion con parametros distintos. 
-    - 5: muestra promedio de recursos acumulados por altruistas y por egoistas en toda la simulacion
-    - 6: muestra total reproducciones de altruistas y egoistas de toda la simulacion
-    - 7: muestra total de muertes de cada uno en la simulacion
-=======
+
 10.⁠ ⁠Resultados, salidas, métricas, gráficos o funcionalidades generadas, según
 corresponda 
 - GRAFICOS/OUTPUTS:
->>>>>>> a069d8e86af101322dc818f03960af2f87860fbf
-
 
     Gráfico 1:  Gráfico de líneas: Evolución de la población por turno Tiene dos líneas: una azul para altruistas y una roja para egoístas. Cada punto en la línea muestra cuántos individuos de ese tipo había en ese turno. Sirve para ver si una condición crece, decrece o desaparece a lo largo de la simulación.
   
