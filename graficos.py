@@ -263,32 +263,22 @@ def grafico_4_interacciones_por_tipo(df):
 
 def grafico_5_recursos_promedio_final(df):
     """
-    Gráfico de barras que muestra el promedio de recursos por individuo
-    para altruistas y egoístas, calculado sobre los turnos válidos de la simulación.
+    Gráfico de barras con dos barras: una para altruistas y una para egoístas.
+    Muestra el promedio de recursos por individuo de cada condición
+    al final de la simulación (último turno).
 
-    El cálculo se realiza en dos pasos:
-    1) Se filtran los turnos donde ambas poblaciones son mayores a 0.
-    2) Para cada turno válido se calcula el promedio:
-            recursos_totales / cantidad de individuos
-       y luego se obtiene el promedio final a lo largo del tiempo.
+    Primero verifica que existan las columnas 'recursos_promedio_A' y
+    'recursos_promedio_E' en el DataFrame. Si no existen, imprime un aviso
+    y omite el gráfico sin romper los demás.
 
-    El gráfico compara el promedio de recursos entre altruistas y egoístas
-    al final de la simulación, mostrando posibles diferencias entre ambas
-    estrategias de comportamiento.
+    El promedio se calcula dividiendo los recursos promedio de cada condición
+    por la cantidad de personas de esa condición en el último turno:
+        promedio_A = recursos_promedio_A / cant_altruistas  (último turno)
+        promedio_E = recursos_promedio_E / cant_egoistas    (último turno)
 
-    Parameters
-    ----------
-    df : pandas.DataFrame
-        DataFrame con una fila por turno. Debe contener:
-            - cant_altruistas
-            - cant_egoistas
-            - recursos_totales_A
-            - recursos_totales_E
-
-    Returns
-    -------
-    None
-        Guarda el gráfico en 'graficos/5_recursos_promedio_final.png'.
+    Para evitar división por cero (si una condición se extinguió), se verifica
+    que cant_altruistas y cant_egoistas sean mayores a 0 antes de dividir.
+    Si alguna condición tiene 0 individuos, su promedio se muestra como 0.
     """
 
     # Solo usamos turnos donde hay población válida
